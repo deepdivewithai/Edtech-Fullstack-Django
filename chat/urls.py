@@ -9,5 +9,4 @@ router.register(r'messages', views.MessageViewSet)
 
 urlpatterns = [
     path('', include(router.urls)),
-    # Other URL patterns for chat rooms, user interactions, etc.
 ]
