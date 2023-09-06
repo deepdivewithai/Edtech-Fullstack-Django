@@ -44,21 +44,9 @@ INSTALLED_APPS = [
     'allauth.socialaccount.providers.google',
     'user',
     'content',
-    'channels',
-    'chat',
     'analytics',
     'payment',
 ]
-
-# Set the channel layer backend to use Channels-Redis.
-CHANNEL_LAYERS = {
-    'default': {
-        'BACKEND': 'channels_redis.core.RedisChannelLayer',
-        'CONFIG': {
-            "hosts": [('127.0.0.1', 6379)],
-        },
-    },
-}
 
 
 ASGI_APPLICATION = 'your_project.routing.application'
