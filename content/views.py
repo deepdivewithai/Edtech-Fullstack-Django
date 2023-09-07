@@ -3,10 +3,10 @@ from rest_framework import generics
 from content.models import Content
 from content.serializers import ContentSerializer
 
-class ContentListCreateView(generics.ListCreateAPIView):
+class ContentListView(generics.ListAPIView):
     queryset = Content.objects.all()
     serializer_class = ContentSerializer
 
-class ContentDetailView(generics.RetrieveUpdateDestroyAPIView):
+class ContentDetailView(generics.ListCreateAPIView):
     queryset = Content.objects.all()
     serializer_class = ContentSerializer

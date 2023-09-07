@@ -1,9 +1,9 @@
 from django.urls import path
-from .views import ContentListCreateView, ContentDetailView
+from .views import ContentListView, ContentDetailView
 
 app_name = 'content_list'
 
 urlpatterns = [
-    path('content/', ContentListCreateView.as_view(), name='content-list-create'),
-    path('content/<int:pk>/', ContentDetailView.as_view(), name='content-detail'),
+    path('teachers/students/content/', ContentListView.as_view(), name='content-list-create'),
+    path('teachers/content/', ContentDetailView.as_view(), name='content-detail'),
 ]

@@ -1,8 +1,13 @@
-from rest_framework import viewsets
-from django.contrib.auth.models import User
-from .serializers import UserSerializer
+from rest_framework.generics import ListCreateAPIView, RetrieveDestroyAPIView
+from .models import Teacher, Student
+from .serializers import TeacherSerializer, StudentSerializer
 
-class UserViewSet(viewsets.ModelViewSet):
-    queryset = User.objects.all()
-    serializer_class = UserSerializer
+
+class TeacherViewSet(ListCreateAPIView):
+    queryset = Teacher.objects.all()
+    serializer_class = TeacherSerializer
+
+class StudentViewSet(ListCreateAPIView):
+    queryset = Student.objects.all()
+    serializer_class = StudentSerializer
 
