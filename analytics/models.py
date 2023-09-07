@@ -3,7 +3,7 @@ from user.models import Teacher
 
 class AnalyticsData(models.Model):
     event_name = models.CharField(max_length=255)
-    teacher = models.ForeignKey(Teacher, on_delete=models.CASCADE)
+    teacher = models.ForeignKey(Teacher, on_delete=models.CASCADE, default=None)
     timestamp = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
