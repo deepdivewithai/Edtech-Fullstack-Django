@@ -1,13 +1,9 @@
-from django.urls import path, include
-from rest_framework.routers import DefaultRouter
-from . import views
+from django.urls import path
+from .views import TeacherViewSet, StudentViewSet
 
 app_name = 'user_list'
 
-router = DefaultRouter()
-router.register(r'users', views.UserViewSet)
-
 urlpatterns = [
-    path('', include(router.urls)),
-    path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+    path('teachers/', TeacherViewSet.as_view(), name='teacher_list'),
+    path('teachers/students/', StudentViewSet.as_view(), name='student_list')
 ]
