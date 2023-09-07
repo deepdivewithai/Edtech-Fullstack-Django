@@ -1,8 +1,9 @@
 from django.urls import path
-from .views import AnalyticsDataList
+from .views import AnalyticsDataCreate, AnalyticsDataList
 
 app_name = 'Analytics'
 
 urlpatterns = [
-    path('users/<int:pk>/analytics/', AnalyticsDataList.as_view(), name='analytics-create'),
+    path('analytics/', AnalyticsDataList.as_view(), name='analytics_list'),
+    path('users/<int:pk>/analytics/', AnalyticsDataCreate.as_view(), name='analytics-create'),
 ]
