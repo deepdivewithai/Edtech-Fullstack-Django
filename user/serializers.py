@@ -1,13 +1,13 @@
-from .models import Teacher,Student
+from .models import TeacherDetails, StudentDetails
 from rest_framework import serializers
 
 class TeacherSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Teacher
+        model = TeacherDetails
         fields = '__all__'
 
 
 class StudentSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Student
+        model = StudentDetails
         fields = '__all__'
